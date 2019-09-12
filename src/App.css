@@ -1,0 +1,156 @@
+.App {
+  text-align: center;
+  color: #4c6072;
+}
+
+.App-logo {
+  height: 80px;
+}
+
+.App-header {
+  display: flex;
+  justify-content: center;
+  background-color: #47b881;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  display: flex;
+  align-self: center;
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App-body {
+  display: flex;
+  padding: 100px;
+  justify-content: center;
+}
+
+.test-container {
+  background-color: #e5eef4;
+  border-radius: 5px;
+  border: 1px solid #4c6072;
+  box-shadow: 0 1px 3px 0 rgba(59,59,88,.15);
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  margin: 0 80px;
+  padding: 0 50px;
+  width: 600px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+textarea,
+input,
+button {
+  outline: none;
+}
+input[type=text],
+textarea {
+  border: 1px solid #d8e0ea;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  box-sizing: border-box;
+  color: #4c6072;
+  display: inline-block;
+  font-size: 12px;
+  padding: 8px;
+  transition: border-color 150ms ease-out;
+}
+input[type=text]::placeholder,
+textarea::placeholder {
+  color: #9bacbf !important;
+  font-weight: weight-normal !important;
+}
+input[type=text]:focus,
+textarea:focus,
+input[type=text]:active,
+textarea:active {
+  border-color: #3391e9;
+  transition: border-color 200ms ease-in;
+}
+
+.create-container {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  max-width: 300px;
+}
+
+.segment-button {
+  align-self: center;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 1px 1px 0 rgba(109,133,158,0.5);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 12px;
+  height: 50px;
+  justify-content: center;
+  letter-spacing: 0;
+  padding: 0 15px;
+  text-align: center;
+  user-select: none;
+  margin: 20px 0;
+  width: 150px;
+}
+
+.email-entered {
+  border-radius: 5px 0 0 5px;
+}
+
+.action-completed {
+  border-radius: 5px;
+}
+
+.segment-button.segment-green {
+  background-color: #47b881;
+  color: #fff;
+}
+
+.segment-button.segment-red {
+  background-color: #ff6666;
+  color: #fff;
+}
+
+.segment-button.segment-green:hover:not(.save-disabled) {
+  background-color: #3faf77;
+}
+
+.segment-button.segment-red:hover:not(.save-disabled) {
+  background-color: #ff392e;
+}
+
+.segment-button.segment-white {
+  background-color: #fff;
+  border: 1px solid #bdc9d6;
+  color: #47b881;
+  height: 80px;
+  width: 200px;
+}
+
+.segment-button .button-text {
+  display: flex;
+  align-self: center;
+  font-size: 14px;
+}
+
+.save-disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
