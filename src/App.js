@@ -4,12 +4,13 @@ import inEU from '@segment/in-eu'
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+  sendTrack() {
+    window.analytics.track("ABC Video - Content Playing");
   }
 
-  componentDidMount() {}
+  sendIdentify() {
+    window.analytics.identify("123", {consent: "true"});
+  }
 
   render() {
     const bannerContent = (
@@ -17,7 +18,7 @@ class App extends Component {
         We use cookies (and other similar technologies) to collect data to improve
         your experience on our site. By using our website, you’re agreeing to the
         collection of data as described in our{' '}
-        <a href="/docs/legal/website-data-collection-policy/" target="_blank">
+        <a href="https://segment.com/docs/legal/privacy/" target="_blank">
           Website Data Collection Policy
         </a>.
       </span>
@@ -31,13 +32,14 @@ class App extends Component {
       <div className="App">
         <ConsentManager
           writeKey="P00ffDKxmMcoBJMMfJNLw0yvQ3Ne3WRx"
-          shouldRequireConsent={inEU}
+          shouldRequireConsent={() => true}
           bannerContent={bannerContent}
           bannerSubContent={bannerSubContent}
           preferencesDialogTitle={preferencesDialogTitle}
           preferencesDialogContent={preferencesDialogContent}
           cancelDialogTitle={cancelDialogTitle}
           cancelDialogContent={cancelDialogContent}
+          implyConsentOnInteraction={false}
         />
         <div className="App-header">
           <div className="App-title">
@@ -47,10 +49,10 @@ class App extends Component {
         <div className="App-body">
           <div className="test-container">
             <div className="buttons-container">
-              <div className="segment-button segment-green">
+              <div className="segment-button segment-green" onClick={this.sendTrack}>
                 Send Track Event
               </div>
-              <div className="segment-button segment-green">
+              <div className="segment-button segment-green" onClick={this.sendIdentify}>
                 Send Identify Call
               </div>
             </div>
